@@ -19,15 +19,11 @@
 
         ////////////////
         function getFramework() {
-            return $http.get('find').success(function (data) {
-                return data;
-            });
+            return $http.get('find');
         }
 
         function getOneFramework(id) {
-            return $http.get('findOne/'+id).success(function (data) {
-                return data;
-            });
+            return $http.get('findOne/' + id);
         }
 
         function postFramework(data) {
