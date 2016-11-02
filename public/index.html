@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="main">
+
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+	<meta name="viewport" content="width=device-width">
+	<title>Angular Estudos</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-animate.min.js"></script>
+	<script src="lib/angular-route.min.js"></script>
+	<script src="lib/angular-resource.min.js"></script>
+	<script src="main.js"></script>
+	<script src="service/framework.service.js"></script>
+	<script src="controllers/framework.controller.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<h1 class="text-center">Angular.JS <small>Aplicacões Single-Page como você nunca viu antes!</small>
+						<img src="http://codecondo.com/wp-content/uploads/2015/05/15-Directives-to-Extend-Your-Angular.js-Apps.jpg?478983" class="img-responsive img-circle"
+							style="display:inline" alt="Angular" width="150" height="150">
+					</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+					<li role="presentation" class="active"><a href="/home">Home</a></li>
+					<li role="presentation"><a href="/framework">Frameworks</a></li>
+					<li role="presentation"><a href="/livros">Livros</a></li>
+				</ul>
+			</div>
+		</div>
+		<ng-view></ng-view>
+	</div>
+</body>
+
+</html>

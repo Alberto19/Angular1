@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-12">
+        <div ng-show="mensagem.text.length" class="alert alert-{{mensagem.type}}">{{mensagem.text}}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <a href="framework/adicionar">Novo Framework</a>
+                </div>
+                <input ng-model="framework.nome" class="form-control" placeholder="Filtrar">
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div ng-repeat="framework in vm.frameworks | filter: framework.nome" class="col-md-2 animated tada">
+        <div class="panel panel-info ">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">{{framework.nome}}</h3>
+            </div>
+            <div class="panel-body">
+                <img class="img-responsive center-block" src="{{framework.foto}}" width="150" height="150" />
+            </div>
+            <div class="panel-footer">
+                <a href="framework/update/{{framework._id}}" class="btn btn-primary btn-sm ">Editar</a>
+                <a href="" class="btn btn-danger btn-sm">Remover</a>
+            </div>
+        </div>
+    </div>
+</div>
