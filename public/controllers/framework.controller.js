@@ -50,7 +50,7 @@
                 vm.mensagem = {
                     text: 'Adicionado com sucesso',
                     type: 'success'
-                }
+                };
             }).error(function (erro) {
                 vm.mensagem = {
                     text: 'Não foi possível adicionar',
