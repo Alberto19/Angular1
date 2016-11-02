@@ -1,24 +1,28 @@
 <form novalidate name="formulario" class="form col-md-6" ng-submit="vm.putFramework()">
 	<div class="form-group animated bounceInUp" ng-class="{ 'has-error' : formulario.nome.$invalid && !formulario.nome.$pristine }">
 		<label>Nome</label>
-		<input ng-model="formulario.nome" name="nome" class="form-control" required>
+		<input ng-model="vm.framework.nome" name="nome" class="form-control" required>
 		<p ng-show="formulario.nome.$invalid && !formulario.nome.$pristine" class="help-block">Nome do framework obrigatório</p>
 	</div>
+
 	<div class="form-group animated bounceInUp" ng-class="{ 'has-error' : formulario.site.$invalid && !formulario.site.$pristine }">
 		<label>Site</label>
 		<input ng-model="formulario.site" name="site" class="form-control" required>
 		<p ng-show="formulario.site.$invalid && !formulario.site.$pristine" class="help-block">Site do Framework obrigatório</p>
 	</div>
+	
 	<div class="form-group animated bounceInUp" ng-class="{ 'has-error' : formulario.foto.$invalid && !formulario.foto.$pristine }">
 		<label>Foto URL</label>
 		<input ng-model="formulario.foto" name="foto" class="form-control" required>
 		<p ng-show="formulario.foto.$invalid && !formulario.foto.$pristine" class="help-block">Foto do framework obrigatório</p>
 	</div>
+
 	<div class="form-group animated bounceInUp" >
 		<label>Descrição</label>
 		<textarea ng-model="formulario.descricao" name="descricao" class="form-control">
             </textarea>
 	</div>
+
 	<button type="submit" class="btn btn-primary btn-sm animated bounceIn" ng-disabled="formulario.$invalid">
             Atualizar
         </button>

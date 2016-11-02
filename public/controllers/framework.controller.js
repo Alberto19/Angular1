@@ -5,9 +5,9 @@
         .module('main')
         .controller('FrameworkController', FrameworkController);
 
-    FrameworkController.$inject = ['framework'];
+    FrameworkController.$inject = ['framework', '$routeParams'];
 
-    function FrameworkController(framework) {
+    function FrameworkController(framework, $routeParams) {
         var vm = this;
         vm.framework = null;
         vm.frameworks = null;
@@ -17,7 +17,8 @@
         vm.getOneFramework = getOneFramework;
         vm.postFramework = postFramework;
 
-        vm.getFramework();
+        // vm.getFramework();
+        vm.getOneFramework();
 
         ////////////////
 
@@ -27,9 +28,11 @@
             });
         }
 
-        function getOneFramework(id) {
-            framework.getOneFramework({id:vm.framework._id}).success(function (data) {
-                vm.framework.id = data
+        function getOneFramework() {
+            var id = $routeParams.Id;
+
+            framework.getOneFramework(id).success(function (data) {
+                vm.framework = data;
             });
         }
 
