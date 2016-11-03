@@ -17,8 +17,20 @@
         vm.getOneFramework = getOneFramework;
         vm.postFramework = postFramework;
 
-        // vm.getFramework();
-        vm.getOneFramework();
+        var state = $routeParams.state;
+
+        if (state === 'list') {
+            vm.getFramework();
+        }
+
+        if (state === 'edit') {
+            vm.getOneFramework();
+        }
+
+        if(state === 'remove'){
+            //Faz ai. Rs
+        }
+
 
         ////////////////
 
