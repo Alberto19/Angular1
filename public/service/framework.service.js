@@ -30,8 +30,8 @@
             return $http.post('new', data);
         }
 
-        function putFramework(Id) {
-            return $http.put('updateId/' + Id);
+        function putFramework(id) {
+            return $http.put('updateId/' + id);
         }
     }
 })();
