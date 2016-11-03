@@ -16,6 +16,7 @@
         vm.getFramework = getFramework;
         vm.getOneFramework = getOneFramework;
         vm.postFramework = postFramework;
+        vm.putFramework = putFramework;
 
         var state = $routeParams.state;
 
@@ -27,7 +28,7 @@
             vm.getOneFramework();
         }
 
-        if(state === 'remove'){
+        if (state === 'remove') {
             //Faz ai. Rs
         }
 
@@ -70,6 +71,13 @@
                 }
                 console.log(erro);
             })
+        }
+
+        function putFramework() {
+            var id = $routeParams.Id;
+            framework.putFramework(id).success(function (data) {
+                 vm.framework = data;
+            });
         }
     }
 })();
