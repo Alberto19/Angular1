@@ -21,6 +21,7 @@
                     templateUrl: 'partials/framework/update.html',
                     controller: 'FrameworkController',
                     controllerAs: 'vm'
-                });
+                })
+                .otherwise('/framework/list');
         }]);
 })();

@@ -12,13 +12,14 @@
             getFramework: getFramework,
             getOneFramework: getOneFramework,
             postFramework: postFramework,
-            putFramework: putFramework
+            putFramework: putFramework,
+            deleteFramework: deleteFramework
         };
 
         return service;
 
         ////////////////
-        function getFramework() {
+        function getFramework() { 
             return $http.get('find');
         }
 
@@ -30,8 +31,12 @@
             return $http.post('new', data);
         }
 
-        function putFramework(id) {
-            return $http.put('updateId/' + id);
+        function putFramework(id, data) {
+            return $http.put('updateId/' + id, data);
+        }
+
+        function deleteFramework(id) {
+            return $http.delete('remove/' + id);
         }
     }
 })();

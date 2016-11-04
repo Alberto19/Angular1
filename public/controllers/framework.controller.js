@@ -5,9 +5,9 @@
         .module('main')
         .controller('FrameworkController', FrameworkController);
 
-    FrameworkController.$inject = ['framework', '$routeParams'];
+    FrameworkController.$inject = ['framework', '$routeParams', '$location'];
 
-    function FrameworkController(framework, $routeParams) {
+    function FrameworkController(framework, $routeParams, $location) {
         var vm = this;
         vm.framework = null;
         vm.frameworks = null;
@@ -17,6 +17,7 @@
         vm.getOneFramework = getOneFramework;
         vm.postFramework = postFramework;
         vm.putFramework = putFramework;
+        vm.deleteFramework = deleteFramework;
 
         var state = $routeParams.state;
 
@@ -27,11 +28,6 @@
         if (state === 'edit') {
             vm.getOneFramework();
         }
-
-        if (state === 'remove') {
-            //Faz ai. Rs
-        }
-
 
         ////////////////
 
@@ -60,23 +56,22 @@
                 vm.site = null;
                 vm.foto = null;
                 vm.descricao = null;
-                vm.mensagem = {
-                    text: 'Adicionado com sucesso',
-                    type: 'success'
-                };
-            }).error(function (erro) {
-                vm.mensagem = {
-                    text: 'Não foi possível adicionar',
-                    type: 'danger'
-                }
-                console.log(erro);
-            })
+
+                $location.path('/framework/list');
+            });
         }
 
         function putFramework() {
             var id = $routeParams.Id;
-            framework.putFramework(id).success(function (data) {
-                 vm.framework = data;
+
+            var data = {nome: vm.framework.nome, site: vm.framework.site, foto: vm.framework.foto};
+
+            framework.putFramework(id, data);
+        }
+
+        function deleteFramework(id){
+            framework.deleteFramework(id).success(function(){
+                vm.getFramework();
             });
         }
     }
