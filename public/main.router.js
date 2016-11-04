@@ -21,6 +21,8 @@
                     templateUrl: 'partials/framework/update.html',
                     controller: 'FrameworkController',
                     controllerAs: 'vm'
+                }).when('/home',{
+                    templateUrl: 'partials/home/index.html'
                 })
                 .otherwise('/framework/list');
         }]);

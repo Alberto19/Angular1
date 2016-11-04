@@ -67,6 +67,7 @@
             var data = {nome: vm.framework.nome, site: vm.framework.site, foto: vm.framework.foto};
 
             framework.putFramework(id, data);
+            $location.path('/framework/list');
         }
 
         function deleteFramework(id){
